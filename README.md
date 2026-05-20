@@ -80,8 +80,8 @@ Labels follow the canonical names: `renewal`, `sicknote`, `office`, `nurse`, `do
 ## Installation
 
 ```bash
-git clone <this-repo-url>
-cd <repo-name>
+git clone https://github.com/YounisMalak/patient-message-routing.git
+cd patient-message-routing
 
 python -m venv venv
 source venv/bin/activate          # Linux / macOS
@@ -290,6 +290,10 @@ Doctor – Urgent messages contain time-sensitive clinical symptoms that warrant
 ## GenAI Usage Disclosure
 
 Generative AI tools were used to support language editing, phrasing refinement, and code-organization assistance during development of this codebase. All scientific content, methodological decisions, experimental design, data analysis, and reported results were produced, verified, and approved by the authors. No confidential patient data was shared with any external generative AI service. Generative AI models were also used as part of the research method (the routing and explanation agents), strictly within the local experimental framework described in the paper. The authors take full responsibility for the correctness of the code and results.
+
+## License
+
+This code is released under the MIT License. See [`LICENSE`](LICENSE) for details.
 
 ## Citation
 
