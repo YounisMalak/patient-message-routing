@@ -11,9 +11,9 @@ Accurately routing patient-generated messages is a major challenge in primary ca
 
 The method has three main components:
 
-1. **Ontology Construction** — An expert-informed, domain-specific clinical ontology that encodes categories, keywords, and priority rules for routing decisions in family medicine.
-2. **Routing Agent** — A LoRA-fine-tuned `Llama-3.2-3B-Instruct` model that performs the actual classification, guided by a structured prompt derived from the ontology.
-3. **Explanation Agent** — A `Llama-3.1-8B-Instruct` model (inference only) that generates concise natural-language justifications for each routing decision, supporting clinician trust and explainability.
+1. **Ontology Construction** - An expert-informed, domain-specific clinical ontology that encodes categories, keywords, and priority rules for routing decisions in family medicine.
+2. **Routing Agent** - A LoRA-fine-tuned `Llama-3.2-3B-Instruct` model that performs the actual classification, guided by a structured prompt derived from the ontology.
+3. **Explanation Agent** - A `Llama-3.1-8B-Instruct` model (inference only) that generates concise natural-language justifications for each routing decision, supporting clinician trust and explainability.
 
 The system is evaluated on a real-world Hebrew patient-message corpus collected from the largest healthcare provider in our region under ethical approval (Helsinki committee), and has been deployed in a real-time human-in-the-loop pilot.
 
@@ -178,12 +178,12 @@ The routing agent receives the full ontology-driven prompt below as the system m
 >
 > **Categories:**
 >
-> - **RX (renewal) — Prescription Renewal.** Requests to renew existing medication prescriptions. *Keywords:* prescription renewal, tab, cap, box, 5mg, 30mg, 25mg, 20mg, 10mg, 100mg.
-> - **ILL (sicknote) — Illness Confirmation.** Requests for sick-leave certificates for work or school. *Keywords:* sick leave certificate, sick leave, illness leave, illness certificate, days of illness, medical leave letter, illness letter for work.
-> - **ADMIN (office) — Office / Administrative.** Administrative requests such as appointments, forms, test results, and documents. *Keywords:* reimbursement, reimbursement for medications, authorization, financial authorization, Form 17, invoice, form, phone, abroad, account number.
-> - **RN (nurse) — Nursing.** Requests for nursing services such as injections, vaccinations, measurements, and dressing changes. *Keywords:* vaccination, blood pressure measurement, diphtheria, vaccine completion, tetanus, wound care, dressing prescription, catheter prescription, HPV, DPT.
-> - **NORMAL (doctor-not-urgent) — Doctor, Not Urgent.** Non-urgent medical consultations, referrals, and discussions of non-acute symptoms. *Keywords:* pediatric gastroenterology, referral, MRI referral, ECG referral, ultrasound referral, breast ultrasound referral, blood test referral, mammography referral, Prevnar vaccine, pneumonia vaccine.
-> - **STAT (doctor-urgent) — Doctor, Urgent.** Conditions requiring immediate medical attention, such as chest pain, shortness of breath, very high fever, or severe bleeding. *Keywords:* head injuries, paralysis, shortness of breath, chest pain, head trauma, bite, facial swelling, eye itching, urgent, severe bleeding.
+> - **RX (renewal) - Prescription Renewal.** Requests to renew existing medication prescriptions. *Keywords:* prescription renewal, tab, cap, box, 5mg, 30mg, 25mg, 20mg, 10mg, 100mg.
+> - **ILL (sicknote) - Illness Confirmation.** Requests for sick-leave certificates for work or school. *Keywords:* sick leave certificate, sick leave, illness leave, illness certificate, days of illness, medical leave letter, illness letter for work.
+> - **ADMIN (office) - Office / Administrative.** Administrative requests such as appointments, forms, test results, and documents. *Keywords:* reimbursement, reimbursement for medications, authorization, financial authorization, Form 17, invoice, form, phone, abroad, account number.
+> - **RN (nurse) - Nursing.** Requests for nursing services such as injections, vaccinations, measurements, and dressing changes. *Keywords:* vaccination, blood pressure measurement, diphtheria, vaccine completion, tetanus, wound care, dressing prescription, catheter prescription, HPV, DPT.
+> - **NORMAL (doctor-not-urgent)- Doctor, Not Urgent.** Non-urgent medical consultations, referrals, and discussions of non-acute symptoms. *Keywords:* pediatric gastroenterology, referral, MRI referral, ECG referral, ultrasound referral, breast ultrasound referral, blood test referral, mammography referral, Prevnar vaccine, pneumonia vaccine.
+> - **STAT (doctor-urgent) - Doctor, Urgent.** Conditions requiring immediate medical attention, such as chest pain, shortness of breath, very high fever, or severe bleeding. *Keywords:* head injuries, paralysis, shortness of breath, chest pain, head trauma, bite, facial swelling, eye itching, urgent, severe bleeding.
 >
 > **Priority Rules:**
 >
@@ -230,7 +230,7 @@ The explanation agent uses the template in [`explainability/explanation_prompt.t
 
 ## Full Categories and Keywords
 
-The table below lists the representative keywords associated with each routing category. The complete machine-readable ontology — including Hebrew translations and priority rules — is in [`ontology/keywords.json`](ontology/keywords.json), and the structured prompt actually fed into the model is in [`ontology/system_prompt.txt`](ontology/system_prompt.txt) (Hebrew).
+The table below lists the representative keywords associated with each routing category. The complete machine-readable ontology, including Hebrew translations and priority rules, is in [`ontology/keywords.json`](ontology/keywords.json), and the structured prompt actually fed into the model is in [`ontology/system_prompt.txt`](ontology/system_prompt.txt) (Hebrew).
 
 | Category | Keywords |
 | --- | --- |
@@ -258,7 +258,7 @@ In medical triage, failing to identify an urgent case is more harmful than over-
 
 Our method's moderate threshold of 0.22 achieves substantially higher urgent recall (92.3%) while satisfying the precision constraint, indicating a more reliable and clinically appropriate separation of urgent from non-urgent messages. At inference time, all models follow the same single-label decision rule: if the predicted confidence for Doctor–Urgent exceeds its calibrated threshold, the message is routed as urgent; otherwise, it is assigned to the non-urgent category with the highest predicted score.
 
-## Explainability — Per-Category Examples
+## Explainability - Per-Category Examples
 
 The following describes the patterns the explanation agent typically produces for each routing category. Concrete generated explanations from the test set are reproduced (in Hebrew) in the supplementary material of the paper.
 
