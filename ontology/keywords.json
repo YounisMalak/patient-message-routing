@@ -1,0 +1,136 @@
+{
+  "categories": {
+    "renewal": {
+      "token": "RX",
+      "description": "Prescription renewal requests for existing medications",
+      "description_hebrew": "בקשות לחידוש מרשמים לתרופות קיימות",
+      "keywords": [
+        "חידוש מרשמים",
+        "tab",
+        "cap",
+        "box",
+        "5mg",
+        "30mg",
+        "25mg",
+        "20mg",
+        "10mg",
+        "100mg"
+      ]
+    },
+    "sicknote": {
+      "token": "ILL",
+      "description": "Illness confirmation requests for work or school",
+      "description_hebrew": "בקשות לאישורי מחלה לעבודה או ללימודים",
+      "keywords": [
+        "אישור מחלה",
+        "חופשת מחלה",
+        "מחלה חופש",
+        "ימי מחלה",
+        "מכתב מחלה לעבודה",
+        "מכתב מחלה",
+        "אישור מחלה לעבודה",
+        "תעודת מחלה"
+      ]
+    },
+    "office": {
+      "token": "ADMIN",
+      "description": "Administrative requests: appointments, forms, test results, documents",
+      "description_hebrew": "בקשות אדמיניסטרטיביות: תורים, טפסים, תוצאות בדיקות, מסמכים",
+      "keywords": [
+        "החזר",
+        "עבור החזר",
+        "התחייבות תרופות",
+        "התחייבות כספית",
+        "טופס 17",
+        "חשבונית",
+        "טופס",
+        "טלפון",
+        "לחו\"ל",
+        "מספר חשבון"
+      ]
+    },
+    "nurse": {
+      "token": "RN",
+      "description": "Nursing services: injections, vaccinations, measurements, dressing changes",
+      "description_hebrew": "בקשות לשירותי אחות: זריקות, חיסונים, מדידות, החלפת תחבושות",
+      "keywords": [
+        "להתחסן",
+        "בדיקת לחץ דם",
+        "דיפטיריה",
+        "השלמת חיסון",
+        "טטנוס",
+        "טיפול פצע",
+        "מרשם לחבישה",
+        "מרשם לקטר",
+        "HPV",
+        "DPT"
+      ]
+    },
+    "doctor-not-urgent": {
+      "token": "NORMAL",
+      "description": "Non-urgent medical consultations, referrals, non-acute symptoms",
+      "description_hebrew": "ייעוץ רפואי לא דחוף, הפניות, התייעצות על תסמינים לא חריפים",
+      "keywords": [
+        "גסטרו ילדים",
+        "הפניה",
+        "הפניה MRI",
+        "הפניה א.ק.ג",
+        "הפניה לאולטרסאונד",
+        "הפניה לאולטרסאונד שד",
+        "הפניה בדיקות דם",
+        "הפניה ממוגרפיה",
+        "חיסון prevnar",
+        "חיסון דלקת ריאות"
+      ]
+    },
+    "doctor-urgent": {
+      "token": "STAT",
+      "description": "Conditions requiring immediate attention: chest pain, shortness of breath, high fever, severe bleeding",
+      "description_hebrew": "מצבים הדורשים טיפול מיידי: כאב חזה, קוצר נשימה, חום גבוה מאוד, דימום חמור",
+      "keywords": [
+        "פציעות ראש",
+        "שיתוק",
+        "קוצר נשימה",
+        "כאב חזה",
+        "חבלה בראש",
+        "נשיכה",
+        "נפיחות בפנים",
+        "גרד בעין",
+        "דחוף",
+        "דימום חזק"
+      ]
+    }
+  },
+  "priority_rules": [
+    {
+      "rule": 1,
+      "condition": "Prescription renewal request (even with symptoms)",
+      "route_to": "RX",
+      "hebrew": "בקשה לחידוש מרשם (גם עם תסמינים) -> RX"
+    },
+    {
+      "rule": 2,
+      "condition": "Illness confirmation request (even with symptoms)",
+      "route_to": "ILL",
+      "hebrew": "בקשה לאישור מחלה (גם עם תסמינים) -> ILL"
+    },
+    {
+      "rule": 3,
+      "condition": "New prescription request with symptoms",
+      "route_to": "NORMAL",
+      "hebrew": "בקשה למרשם חדש עם תסמינים -> NORMAL"
+    },
+    {
+      "rule": 4,
+      "condition": "Urgent symptoms only (without any other request)",
+      "route_to": "STAT",
+      "hebrew": "תסמינים דחופים בלבד (ללא בקשה אחרת) -> STAT"
+    },
+    {
+      "rule": 5,
+      "condition": "Nursing services (injections, measurements)",
+      "route_to": "RN",
+      "hebrew": "שירותי אחות (זריקות, מדידות) -> RN"
+    }
+  ]
+}

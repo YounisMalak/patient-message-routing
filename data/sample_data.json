@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "text": "צריך לחדש מרשם לכדורי לחץ דם",
+    "label": "renewal",
+    "translation": "Need to renew prescription for blood pressure pills"
+  },
+  {
+    "id": 2,
+    "text": "יש לי חום וכאב גרון, צריכה אישור מחלה לעבודה",
+    "label": "sicknote",
+    "translation": "I have fever and sore throat, need sick leave for work"
+  },
+  {
+    "id": 3,
+    "text": "מתי יש תור פנוי לרופא",
+    "label": "office",
+    "translation": "When is there an available appointment with the doctor"
+  },
+  {
+    "id": 4,
+    "text": "צריך לקבל זריקת B12",
+    "label": "nurse",
+    "translation": "Need to get a B12 injection"
+  },
+  {
+    "id": 5,
+    "text": "יש לי כאבי ראש תכופים, רוצה הפניה לנוירולוג",
+    "label": "doctor-not-urgent",
+    "translation": "I have frequent headaches, want a referral to neurologist"
+  },
+  {
+    "id": 6,
+    "text": "כאבים חזקים בחזה וקוצר נשימה",
+    "label": "doctor-urgent",
+    "translation": "Strong chest pain and shortness of breath"
+  },
+  {
+    "id": 7,
+    "text": "לחדש מרשם LIPITOR 20MG",
+    "label": "renewal",
+    "translation": "Renew prescription for LIPITOR 20MG"
+  },
+  {
+    "id": 8,
+    "text": "הילד חולה, צריך אישור מחלה לבית הספר",
+    "label": "sicknote",
+    "translation": "Child is sick, need sick note for school"
+  },
+  {
+    "id": 9,
+    "text": "צריך טופס 17 להפניה",
+    "label": "office",
+    "translation": "Need Form 17 for referral"
+  },
+  {
+    "id": 10,
+    "text": "רוצה להתחסן נגד שפעת",
+    "label": "nurse",
+    "translation": "Want to get flu vaccination"
+  },
+  {
+    "id": 11,
+    "text": "יש לי פריחה ביד כבר שבוע, רוצה להתייעץ",
+    "label": "doctor-not-urgent",
+    "translation": "I have a rash on my hand for a week, want to consult"
+  },
+  {
+    "id": 12,
+    "text": "הילד נפל על הראש והקיא",
+    "label": "doctor-urgent",
+    "translation": "Child fell on head and vomited"
+  }
+]

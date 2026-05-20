@@ -1,0 +1,62 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# macOS metadata
+__MACOSX/
+._*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Model artifacts and large outputs
+finetuned_model/
+finetuned_routing_agent/
+mbert_temp/
+checkpoints/
+*.pt
+*.bin
+*.safetensors
+*.ckpt
+
+# Result files
+*_results.json
+baseline_results.json
+ablation_results.json
+wandb/
+
+# Data (do not commit real patient data)
+data/train.json
+data/val.json
+data/test.json
+data/raw/
+*.csv
+
+# Logs
+*.log
+logs/
+
+# Env files
+.env
+.env.local
