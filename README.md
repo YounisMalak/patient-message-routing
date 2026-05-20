@@ -230,7 +230,16 @@ The explanation agent uses the template in [`explainability/explanation_prompt.t
 
 ## Full Categories and Keywords
 
-The complete machine-readable ontology — categories, descriptions in both English and Hebrew, keywords, and priority rules — is in [`ontology/keywords.json`](ontology/keywords.json). The structured prompt actually fed into the model is in [`ontology/system_prompt.txt`](ontology/system_prompt.txt) (Hebrew).
+The table below lists the representative keywords associated with each routing category. The complete machine-readable ontology — including Hebrew translations and priority rules — is in [`ontology/keywords.json`](ontology/keywords.json), and the structured prompt actually fed into the model is in [`ontology/system_prompt.txt`](ontology/system_prompt.txt) (Hebrew).
+
+| Category | Keywords |
+| --- | --- |
+| **Office Requests** | Appointment Scheduling, Form 17, Commitment, Financial Commitment, Appeal Commitment, Payment, Reimbursement, Reimbursement for Medications, Receiving Reimbursement, Phone, Contact, Substitute Doctor, Account Number, Invoice, NIS, Overseas, Referral Code, Voicemail |
+| **Prescription Renewal** | Prescription Renewal, To Renew, For Which Medications, Prescription, Regular Prescription, Tab, Cap, Box, 5mg, 10mg, 20mg, 25mg, 30mg, 100mg, Regular Medications, Monthly Medications |
+| **Illness Confirmation** | Sick Leave Certificate, Sick Leave Certificates, Sick Leave, Sickleave, Illness, Medical Certificate |
+| **Nursing Requests** | Polio, DPT, Tetanus, Diphtheria, Pertussis, HPV, Vaccine Completion, Get Vaccinated, Stoma Equipment, Prescription for Dressing, Prescription for Catheter, Pressure Wound, Wound Treatment, Blood Pressure Test |
+| **Doctor – Not Urgent** | Referral, MRI Referral, Ultrasound Referral, Breast Ultrasound Referral, ECG Referral, Blood Test Referral, Mammography Referral, Psychiatric Appointment, Visit Summary, Chronic Fatigue, Prevnar Vaccine, Pneumonia Vaccine, Papilloma Vaccine, Chronic Symptom, Emotional Therapy, Colonoscopy, Pediatric Gastro |
+| **Doctor – Urgent** | Urgent, Pain, Severe Pain, Sharp Pain, Intense Pain, Extreme Pain, Headache, Shortness of Breath, Severe, Eye Itchiness, Injury, Head Injury, Swelling, Bleeding, High Fever, Severe Infection, Breathing Difficulties, Chest Pressure, Rash, Post-Surgery Pain, Wisdom Tooth |
 
 ## Classification Thresholds
 
